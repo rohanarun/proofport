@@ -1,0 +1,36 @@
+{
+  "name": "@managed-oss/proofport",
+  "version": "0.1.0",
+  "description": "Collect, moderate, publish, revoke, and measure customer proof with explicit consent.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohanarun/proofport.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rohanarun/proofport/issues"
+  },
+  "homepage": "https://github.com/rohanarun/proofport#readme",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "bin": {
+    "proofport": "src/cli.mjs",
+    "proofport-mcp": "src/mcp.mjs"
+  },
+  "files": [
+    "src",
+    "web",
+    "product-manifest.json",
+    "LICENSE",
+    "README.md",
+    "SECURITY.md",
+    "Dockerfile"
+  ],
+  "scripts": {
+    "start": "node src/web-server.mjs",
+    "test": "node --test --test-concurrency=1",
+    "verify": "node scripts/verify-manifest.mjs && node --test --test-concurrency=1"
+  }
+}
