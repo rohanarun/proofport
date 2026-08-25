@@ -1,0 +1,169 @@
+{
+  "schema": "managed-oss-functional-tutorial.v1",
+  "product": {
+    "slug": "proofport",
+    "name": "ProofPort",
+    "moduleId": "testimonials",
+    "version": "0.3.1",
+    "manifestSha256": "027aae3af9b112ad8445336530f82ca2a6ac5d95707d310ef254d20cdeb42df5"
+  },
+  "backend": {
+    "release": "v0.4.4",
+    "commit": "148abce99b91d8b9fdc8aa41c3f0eba283796db4"
+  },
+  "testedAt": "2026-08-25T22:00:21.520Z",
+  "browser": {
+    "engine": "Chromium",
+    "version": "151.0.7922.174",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "functionalProof": {
+    "action": {
+      "id": "collection-create",
+      "title": "Create testimonial collection",
+      "httpStatus": 200
+    },
+    "record": {
+      "id": "8531c47f-4142-4bdd-8709-9f954e0400e0",
+      "recordType": "collection",
+      "title": "ProofPort tutorial workspace",
+      "state": "active"
+    },
+    "detail": {
+      "httpStatus": 200,
+      "matched": true
+    },
+    "assertions": [
+      "browser-authenticated-real-backend",
+      "guided-form-submitted",
+      "action-http-200",
+      "durable-record-returned",
+      "record-detail-http-200",
+      "exact-record-reopened-in-ui"
+    ]
+  },
+  "timeline": [
+    {
+      "stepId": "overview",
+      "observedLabel": "Meet ProofPort",
+      "observedFact": "Open the real ProofPort workspace and identify its core workflow.",
+      "startMs": 0,
+      "endMs": 2250
+    },
+    {
+      "stepId": "connect",
+      "observedLabel": "Connect the workspace",
+      "observedFact": "Authenticate this browser to the isolated shared backend and load durable records.",
+      "startMs": 2250,
+      "endMs": 5375
+    },
+    {
+      "stepId": "configure",
+      "observedLabel": "Create testimonial collection",
+      "observedFact": "Complete the guided, contract-validated form for the product's primary workflow.",
+      "startMs": 5375,
+      "endMs": 7875
+    },
+    {
+      "stepId": "execute",
+      "observedLabel": "Run the real workflow",
+      "observedFact": "Submit the action to the shared backend and require a successful durable result.",
+      "startMs": 7875,
+      "endMs": 10375
+    },
+    {
+      "stepId": "inspect",
+      "observedLabel": "Inspect the saved record",
+      "observedFact": "Search the product record view and reopen the exact record returned by the workflow.",
+      "startMs": 10375,
+      "endMs": 17000
+    }
+  ],
+  "explanation": {
+    "title": "ProofPort Testimonial Collection Setup",
+    "summary": "Connect your workspace, configure and execute a testimonial collection creation workflow, and inspect the resulting durable record in ProofPort.",
+    "cues": [
+      {
+        "stepId": "overview",
+        "startMs": 0,
+        "endMs": 2250,
+        "label": "Meet ProofPort",
+        "subtitle": "View the ProofPort overview dashboard and core testimonial workspace features."
+      },
+      {
+        "stepId": "connect",
+        "startMs": 2250,
+        "endMs": 5375,
+        "label": "Connect the workspace",
+        "subtitle": "Connect to the shared workspace backend to prepare for action execution."
+      },
+      {
+        "stepId": "configure",
+        "startMs": 5375,
+        "endMs": 7875,
+        "label": "Configure testimonial collection",
+        "subtitle": "Enter required details including collection name, purpose, and consent version."
+      },
+      {
+        "stepId": "execute",
+        "startMs": 7875,
+        "endMs": 10375,
+        "label": "Execute collection workflow",
+        "subtitle": "Submit the creation action to process and save the new testimonial collection."
+      },
+      {
+        "stepId": "inspect",
+        "startMs": 10375,
+        "endMs": 17000,
+        "label": "Inspect the saved record",
+        "subtitle": "Search and open the newly created active collection record in the records view."
+      }
+    ],
+    "generation": {
+      "provider": "OpenRouter",
+      "model": "google/gemini-3.7-flash",
+      "requestedModel": "google/gemini-3.7-flash",
+      "responseModel": "google/gemini-3.7-flash",
+      "responseId": "gen-1787695216-H7gwHGksGbMkXKtT9FlB",
+      "responseCreatedAt": "2026-08-25T22:00:16.000Z",
+      "input": {
+        "rawVideoSha256": "9d6442e24a31734814c3bda892cd14dd3869665a8fad5e8a7010ac2f377a7a4b",
+        "workflowFactsSha256": "1323977de4a7c864567278a4c9c12dceb766b99ee0a686df5e384bab3eea1f2d"
+      },
+      "usage": {
+        "promptTokens": 1559,
+        "completionTokens": 845,
+        "totalTokens": 2404
+      }
+    }
+  },
+  "video": {
+    "raw": {
+      "sha256": "9d6442e24a31734814c3bda892cd14dd3869665a8fad5e8a7010ac2f377a7a4b",
+      "codec": "h264",
+      "width": 1280,
+      "height": 720,
+      "durationSeconds": 17,
+      "sizeBytes": 369675
+    },
+    "final": {
+      "file": "docs/tutorial.mp4",
+      "sha256": "7c61a019cf9cc3f1d35e9dc1262155a6043e0e01121003bd4631b6e906451738",
+      "codec": "h264",
+      "width": 1280,
+      "height": 720,
+      "durationSeconds": 17,
+      "sizeBytes": 396778
+    },
+    "subtitles": {
+      "file": "docs/tutorial.srt",
+      "sha256": "2141cdbb2f0f5eb69ff49cabd59d468c4f8d98fd91bb68b38f0d01fb82d7ec80",
+      "format": "SubRip"
+    },
+    "overlaysBurnedIn": true,
+    "silent": true
+  }
+}

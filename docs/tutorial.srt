@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:02,250
+View the ProofPort overview dashboard and core testimonial workspace features.
+
+2
+00:00:02,250 --> 00:00:05,375
+Connect to the shared workspace backend to prepare for action execution.
+
+3
+00:00:05,375 --> 00:00:07,875
+Enter required details including collection name, purpose, and consent version.
+
+4
+00:00:07,875 --> 00:00:10,375
+Submit the creation action to process and save the new testimonial collection.
+
+5
+00:00:10,375 --> 00:00:17,000
+Search and open the newly created active collection record in the records view.
