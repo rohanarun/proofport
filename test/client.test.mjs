@@ -5,8 +5,8 @@ import { manifest } from "../src/manifest.mjs";
 import { createFakeApi } from "./helpers/fake-api.mjs";
 
 test("manifest is pinned and every action is product scoped", () => {
-  assert.equal(manifest.release.backendRelease, "v0.4.0");
-  assert.equal(manifest.release.backendCommit, "4ff94afc860109e683c56c3acffedb8a6c233e03");
+  assert.equal(manifest.release.backendRelease, "v0.4.2");
+  assert.equal(manifest.release.backendCommit, "20c4a704c77cbbbff1da995e1d91b937625a8aa4");
   assert.ok(manifest.actions.length > 0);
   assert.ok(manifest.actions.every((action) => action.moduleId === manifest.module.id));
   assert.equal(new Set(manifest.actions.map((action) => action.id)).size, manifest.actions.length);

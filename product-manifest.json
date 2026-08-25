@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "release": {
-    "productVersion": "0.1.0",
-    "backendRelease": "v0.4.0",
-    "backendCommit": "4ff94afc860109e683c56c3acffedb8a6c233e03",
-    "backendSourceSnapshotSha256": "df03dff119034858ec0a25b1171226ff3539d015318c15b5a2359eab49118dcf",
+    "productVersion": "0.2.0",
+    "backendRelease": "v0.4.2",
+    "backendCommit": "20c4a704c77cbbbff1da995e1d91b937625a8aa4",
+    "backendSourceSnapshotSha256": "d0b7b1079d4924eb7369c788a979a707d45bb63470290e6ac33ee5662d78f69f",
     "generatedAt": "2026-08-24T00:00:00.000Z",
     "generator": "managed-oss-cloud/scripts/generate-product-repositories.mjs"
   },
@@ -30,7 +30,14 @@
       "request",
       "testimonial",
       "widget",
-      "consent"
+      "consent",
+      "collection",
+      "collection-request",
+      "moderation-decision",
+      "publication-version",
+      "widget-version",
+      "aggregate-event",
+      "ai-request-audit"
     ],
     "aiCapabilities": [
       "draft request",
@@ -48,6 +55,190 @@
   "cleanRoom": {
     "statement": "Original clean-room implementation of the social proof software category, designed and written independently.",
     "sourceBoundary": "Public category behavior informed requirements; implementation and product identity are original."
+  },
+  "experience": {
+    "releaseBoundary": "Complete for every typed action declared by this product manifest; it does not claim feature parity with unrelated third-party products.",
+    "headline": "Collect",
+    "primaryActionId": "collection-create",
+    "quickActionIds": [
+      "collection-create",
+      "request-draft",
+      "submission-record",
+      "consent-revoke"
+    ],
+    "navigation": [
+      "Overview",
+      "Records",
+      "Workflows",
+      "AI assistance",
+      "Settings"
+    ],
+    "workflowGroups": [
+      {
+        "name": "Create and capture",
+        "actionIds": [
+          "collection-create",
+          "request-draft",
+          "submission-record",
+          "moderation-decide",
+          "publication-version-create",
+          "widget-version-create"
+        ]
+      },
+      {
+        "name": "Review and approve",
+        "actionIds": [
+          "consent-revoke",
+          "publication-publish",
+          "widget-publish",
+          "embed-code-read"
+        ]
+      },
+      {
+        "name": "Inspect and report",
+        "actionIds": [
+          "aggregate-event-ingest"
+        ]
+      },
+      {
+        "name": "AI assistance",
+        "actionIds": [
+          "review-highlights-propose"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "label": "Typed actions",
+        "value": 12
+      },
+      {
+        "label": "Record types",
+        "value": 11
+      },
+      {
+        "label": "AI workflows",
+        "value": 1
+      },
+      {
+        "label": "Review gates",
+        "value": 4
+      }
+    ],
+    "sampleRecords": [
+      {
+        "id": "demo-testimonials-01",
+        "moduleId": "testimonials",
+        "recordType": "request",
+        "title": "Request Launch",
+        "state": "active",
+        "createdAt": "2026-08-18T13:30:00.000Z",
+        "updatedAt": "2026-08-25T13:15:00.000Z",
+        "data": {
+          "owner": "Operations",
+          "evidenceStatus": "verified",
+          "nextStep": "Create testimonial collection"
+        }
+      },
+      {
+        "id": "demo-testimonials-02",
+        "moduleId": "testimonials",
+        "recordType": "testimonial",
+        "title": "Testimonial Operations",
+        "state": "in review",
+        "createdAt": "2026-08-19T13:30:00.000Z",
+        "updatedAt": "2026-08-25T12:15:00.000Z",
+        "data": {
+          "owner": "Product",
+          "evidenceStatus": "current",
+          "nextStep": "Draft collection request"
+        }
+      },
+      {
+        "id": "demo-testimonials-03",
+        "moduleId": "testimonials",
+        "recordType": "widget",
+        "title": "Widget Evidence",
+        "state": "ready",
+        "createdAt": "2026-08-20T13:30:00.000Z",
+        "updatedAt": "2026-08-25T11:15:00.000Z",
+        "data": {
+          "owner": "Operations",
+          "evidenceStatus": "current",
+          "nextStep": "Record consented testimonial"
+        }
+      },
+      {
+        "id": "demo-testimonials-04",
+        "moduleId": "testimonials",
+        "recordType": "consent",
+        "title": "Consent Review",
+        "state": "scheduled",
+        "createdAt": "2026-08-21T13:30:00.000Z",
+        "updatedAt": "2026-08-25T10:15:00.000Z",
+        "data": {
+          "owner": "Product",
+          "evidenceStatus": "verified",
+          "nextStep": "Revoke testimonial publication"
+        }
+      },
+      {
+        "id": "demo-testimonials-05",
+        "moduleId": "testimonials",
+        "recordType": "collection",
+        "title": "Collection Pilot",
+        "state": "draft",
+        "createdAt": "2026-08-22T13:30:00.000Z",
+        "updatedAt": "2026-08-25T09:15:00.000Z",
+        "data": {
+          "owner": "Operations",
+          "evidenceStatus": "current",
+          "nextStep": "Record human moderation decision"
+        }
+      },
+      {
+        "id": "demo-testimonials-06",
+        "moduleId": "testimonials",
+        "recordType": "collection-request",
+        "title": "Collection Request Archive",
+        "state": "complete",
+        "createdAt": "2026-08-23T13:30:00.000Z",
+        "updatedAt": "2026-08-25T08:15:00.000Z",
+        "data": {
+          "owner": "Product",
+          "evidenceStatus": "current",
+          "nextStep": "Create immutable publication version"
+        }
+      },
+      {
+        "id": "demo-testimonials-07",
+        "moduleId": "testimonials",
+        "recordType": "moderation-decision",
+        "title": "Moderation Decision Launch",
+        "state": "active",
+        "createdAt": "2026-08-24T13:30:00.000Z",
+        "updatedAt": "2026-08-25T07:15:00.000Z",
+        "data": {
+          "owner": "Operations",
+          "evidenceStatus": "verified",
+          "nextStep": "Publish exact testimonial version"
+        }
+      },
+      {
+        "id": "demo-testimonials-08",
+        "moduleId": "testimonials",
+        "recordType": "publication-version",
+        "title": "Publication Version Operations",
+        "state": "in review",
+        "createdAt": "2026-08-25T13:30:00.000Z",
+        "updatedAt": "2026-08-25T06:15:00.000Z",
+        "data": {
+          "owner": "Product",
+          "evidenceStatus": "current",
+          "nextStep": "Create safe widget version"
+        }
+      }
+    ]
   },
   "actions": [
     {
