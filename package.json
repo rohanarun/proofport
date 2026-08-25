@@ -1,6 +1,6 @@
 {
   "name": "@managed-oss/proofport",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Collect, moderate, publish, revoke, and measure customer proof with explicit consent.",
   "type": "module",
   "license": "MIT",
